@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/SeriesTemplateSample/Form1.cs) (VB: [Form1.vb](./VB/SeriesTemplateSample/Form1.vb))
+<!-- default file list end -->
 # How to iterate through the auto-created series to perform custom calculations
 
 
