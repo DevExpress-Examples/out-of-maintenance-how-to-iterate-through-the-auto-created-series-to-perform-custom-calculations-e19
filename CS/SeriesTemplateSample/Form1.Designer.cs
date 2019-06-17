@@ -39,9 +39,7 @@ namespace SeriesTemplateSample {
             // 
             this.chartControl1.DataAdapter = this.gSPTableAdapter;
             this.chartControl1.DataSource = this.gSPBindingSource;
-            xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -50,7 +48,7 @@ namespace SeriesTemplateSample {
             this.chartControl1.SeriesDataMember = "Year";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "Year";
-            this.chartControl1.SeriesTemplate.SummaryFunction = "SUM([GSP])";
+            this.chartControl1.SeriesTemplate.NumericSummaryOptions.SummaryFunction = "SUM([GSP])";
             this.chartControl1.Size = new System.Drawing.Size(771, 414);
             this.chartControl1.TabIndex = 0;
             this.chartControl1.BoundDataChanged += new DevExpress.XtraCharts.BoundDataChangedEventHandler(this.chartControl1_BoundDataChanged);
