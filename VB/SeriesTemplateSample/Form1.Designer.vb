@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace SeriesTemplateSample
+﻿Namespace SeriesTemplateSample
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -41,9 +39,7 @@ Namespace SeriesTemplateSample
 			' 
 			Me.chartControl1.DataAdapter = Me.gSPTableAdapter
 			Me.chartControl1.DataSource = Me.gSPBindingSource
-			xyDiagram1.AxisX.Range.SideMarginsEnabled = True
 			xyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-			xyDiagram1.AxisY.Range.SideMarginsEnabled = True
 			xyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
 			Me.chartControl1.Diagram = xyDiagram1
 			Me.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -52,10 +48,11 @@ Namespace SeriesTemplateSample
 			Me.chartControl1.SeriesDataMember = "Year"
 			Me.chartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(){}
 			Me.chartControl1.SeriesTemplate.ArgumentDataMember = "Year"
-			Me.chartControl1.SeriesTemplate.SummaryFunction = "SUM([GSP])"
+			Me.chartControl1.SeriesTemplate.NumericSummaryOptions.SummaryFunction = "SUM([GSP])"
 			Me.chartControl1.Size = New System.Drawing.Size(771, 414)
 			Me.chartControl1.TabIndex = 0
-'			Me.chartControl1.BoundDataChanged += New DevExpress.XtraCharts.BoundDataChangedEventHandler(Me.chartControl1_BoundDataChanged);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.chartControl1.BoundDataChanged += new DevExpress.XtraCharts.BoundDataChangedEventHandler(this.chartControl1_BoundDataChanged);
 			' 
 			' gspDataSet
 			' 
@@ -79,7 +76,8 @@ Namespace SeriesTemplateSample
 			Me.Controls.Add(Me.chartControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(xyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.chartControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gspDataSet, System.ComponentModel.ISupportInitialize).EndInit()

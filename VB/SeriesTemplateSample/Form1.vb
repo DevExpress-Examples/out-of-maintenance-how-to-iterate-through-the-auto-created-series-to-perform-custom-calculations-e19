@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -12,12 +11,13 @@ Imports DevExpress.XtraCharts
 Namespace SeriesTemplateSample
 	Partial Public Class Form1
 		Inherits Form
+
 		Private series As New Hashtable()
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			' TODO: This line of code loads data into the 'gspDataSet.GSP' table. You can move, or remove it, as needed.
 			Me.gSPTableAdapter.Fill(Me.gspDataSet.GSP)
 			chartControl1.RefreshData()
@@ -39,7 +39,7 @@ Namespace SeriesTemplateSample
 
 		Private Sub chartControl1_BoundDataChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chartControl1.BoundDataChanged
 			For Each s As Series In chartControl1.Series
-				If (Not series.Contains(s.Name)) Then
+				If Not series.Contains(s.Name) Then
 					series.Add(s.Name, s)
 				End If
 			Next s
